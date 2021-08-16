@@ -65,8 +65,11 @@ _G.run = run
 
 while _G.run == true do
     wait()
-    equipBook()
-    useBook()
-    nextBook()
-    nextBrain()
+    if getBook() then
+        useBook()
+        nextBook()
+        nextBrain()
+    else
+        equipBook()
+    end
 end
