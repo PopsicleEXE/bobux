@@ -1,8 +1,8 @@
 local hubs = {
-	"https://raw.githubusercontent.com/PopsicleEXE/bobux/main/scripts/Impulse%20Hub.lua",
+	"https://raw.githubusercontent.com/PopsicleEXE/bobux/main/scripts/ImpulseHub.lua",
 }
 local list = {
-	[6284583030] = "https://raw.githubusercontent.com/PopsicleEXE/bobux/main/scripts/Pet%20Sim%20X.lua"
+	[6284583030] = "https://raw.githubusercontent.com/PopsicleEXE/bobux/main/scripts/PetSimX.lua"
 }
 
 local a=Instance.new"ScreenGui"
