@@ -140,7 +140,7 @@ function dragify(Frame)
     end)
 end
 
-dragify(a.MainGui)
+dragify(b)
 
 
 local curGame = list[game.PlaceId]
