@@ -1,5 +1,8 @@
+local hubs = {
+	"https://raw.githubusercontent.com/PopsicleEXE/bobux/main/scripts/Impulse%20Hub.lua",
+}
 local list = {
-	[4893679160] = "https://raw.githubusercontent.com/PopsicleEXE/bobux/main/scripts/bigBrainSimulator.lua"
+	[6284583030] = "https://raw.githubusercontent.com/PopsicleEXE/bobux/main/scripts/Pet%20Sim%20X.lua"
 }
 
 local a=Instance.new"ScreenGui"
@@ -111,6 +114,18 @@ if curGame then
 	new.Button.MouseButton1Click:Connect(function()
 		print("clicked "..split[#split])
 		loadstring(game:HttpGet(curGame))()
+	end)
+end
+
+for _,item in pairs(hubs) do
+	local split = string.split(item,"/")
+	local new = h:Clone()
+	new.Button.Text = split[#split]
+	new.Parent = f
+	
+	new.Button.MouseButton1Click:Connect(function()
+		print("clicked "..split[#split])
+		loadstring(game:HttpGet(item))()
 	end)
 end
 
