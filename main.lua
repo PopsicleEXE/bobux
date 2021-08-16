@@ -102,47 +102,6 @@ l.Parent=b
 local m=Instance.new"UICorner"
 m.Parent=l
 
-local UIS = game:GetService("UserInputService")
-local TS = game:GetService("TweenService")
-
-function dragify(Frame)
-    dragToggle = nil
-    local dragSpeed = 0
-    dragInput = nil
-    dragStart = nil
-    local dragPos = nil
-    function updateInput(input)
-        local Delta = input.Position - dragStart
-        local Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
-        TS:Create(Frame, TweenInfo.new(0.25), {Position = Position}):Play()
-    end
-    Frame.InputBegan:Connect(function(input)
-        if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and UIS:GetFocusedTextBox() == nil then
-            dragToggle = true
-            dragStart = input.Position
-            startPos = Frame.Position
-            input.Changed:Connect(function()
-                if input.UserInputState == Enum.UserInputState.End then
-                    dragToggle = false
-                end
-            end)
-        end
-    end)
-    Frame.InputChanged:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-            dragInput = input
-        end
-    end)
-    UIS.InputChanged:Connect(function(input)
-        if input == dragInput and dragToggle then
-            updateInput(input)
-        end
-    end)
-end
-
-dragify(b)
-
-
 local curGame = list[game.PlaceId]
 if curGame then
 	local split = string.split(curGame,"/")
