@@ -1,2 +1,2 @@
 # bobux
-a collection of roblox scripts
+just fucking fork it if you want any good scripts
